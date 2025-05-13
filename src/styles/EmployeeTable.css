@@ -1,0 +1,81 @@
+.employee-table-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.filter-bar button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.filter-bar button:hover {
+  background-color: #059669;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: #f3f4f6;
+}
+
+.action-icon {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  color: #2563eb;
+}
+
+.action-icon:hover {
+  color: #1d4ed8;
+}
+
+.pagination {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 4px;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.pagination button.active {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
