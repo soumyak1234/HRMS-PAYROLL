@@ -1,0 +1,42 @@
+.stat-widget {
+  background: white;
+  padding: 1.2rem;
+  margin: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.stat-widget:hover {
+  transform: translateY(-5px);
+}
+
+.widget-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.widget-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-title {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.widget-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+}

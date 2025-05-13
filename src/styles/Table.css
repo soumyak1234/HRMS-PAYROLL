@@ -1,0 +1,96 @@
+.employee-table-container {
+  background: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.employee-table thead {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.employee-table td.active {
+  color: green;
+  font-weight: bold;
+}
+
+.employee-table td.on-leave {
+  color: orange;
+  font-weight: bold;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.table-header input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 280px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.export-buttons {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.export-buttons button {
+  padding: 6px 12px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.export-buttons button:hover {
+  background-color: #059669;
+}
