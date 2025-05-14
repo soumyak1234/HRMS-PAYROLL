@@ -5,13 +5,6 @@ import * as XLSX from 'xlsx';
 import '../styles/EmployeeTable.css';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
-const mockData = [
-  { id: 1, name: 'Chinmaya Kumar Nayak', email: 'chinmaya@example.com', department: 'HR', role: 'Manager' },
-  { id: 2, name: 'Soumyak ranjan Behera', email: 'jane@example.com', department: 'Finance', role: 'Analyst' },
-  { id: 3, name: 'Anita Patra', email: 'sam@example.com', department: 'Engineering', role: 'Developer' },
-  { id: 4, name: 'Biswajit Bhadra', email: 'lisa@example.com', department: 'Marketing', role: 'Lead' },
-  // Add more mock data if needed
-];
 
 function EmployeeList({ employees,onDelete, onEdit }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,6 +19,12 @@ function EmployeeList({ employees,onDelete, onEdit }) {
 
   const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+    const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
 
   const exportToPDF = () => {
     const doc = new jsPDF();
@@ -44,6 +43,12 @@ function EmployeeList({ employees,onDelete, onEdit }) {
     XLSX.utils.book_append_sheet(workbook, worksheet, "Employees");
     XLSX.writeFile(workbook, "employee_list.xlsx");
   };
+
+  const handleDelete = (id) => {
+  if (window.confirm("Are you sure you want to delete this employee?")) {
+    onDelete(id);
+  }
+};
 
   return (
     <div className="employee-table-container">
@@ -87,7 +92,7 @@ function EmployeeList({ employees,onDelete, onEdit }) {
               <td>{emp.role}</td>
               <td>
                 <FaEdit className="action-icon" onClick={() => onEdit(emp)} />
-                <FaTrash className="action-icon" onClick={() => onDelete(emp.id)} />
+                <FaTrash className="action-icon" onClick={() => handleDelete(emp.id)} />
               </td>
             </tr>
           ))}
@@ -95,15 +100,13 @@ function EmployeeList({ employees,onDelete, onEdit }) {
       </table>
 
       <div className="pagination">
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i}
-            className={i + 1 === currentPage ? 'active' : ''}
-            onClick={() => setCurrentPage(i + 1)}
-          >
-            {i + 1}
-          </button>
-        ))}
+        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+          ⬅ Prev
+        </button>
+        <span>Page {currentPage} of {totalPages}</span>
+        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+          Next ➡
+        </button>
       </div>
     </div>
   );

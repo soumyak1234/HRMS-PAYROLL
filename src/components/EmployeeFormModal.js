@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/EmployeeFormModal.css';
 
-function EmployeeFormModal({ isOpen, onClose, onSubmit, editableEmployee }) {
+function EmployeeFormModal({ isOpen, onClose, onSave, editableEmployee }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,7 +28,7 @@ function EmployeeFormModal({ isOpen, onClose, onSubmit, editableEmployee }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);       // Pass data to parent
+    onSave(formData);       // Pass data to parent
     onClose();                // Close modal after submit
   };
 
@@ -66,8 +66,8 @@ function EmployeeFormModal({ isOpen, onClose, onSubmit, editableEmployee }) {
             required
           />
           <div className="modal-actions">
-            <button type="submit" className="submit-btn">Save</button>
             <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
+            <button type="submit" className="submit-btn">Save</button>
           </div>
         </form>
       </div>

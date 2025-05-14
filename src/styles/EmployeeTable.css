@@ -59,23 +59,3 @@
 .action-icon:hover {
   color: #1d4ed8;
 }
-
-.pagination {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.pagination button {
-  margin: 0 4px;
-  padding: 6px 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: white;
-}
-
-.pagination button.active {
-  background-color: #2563eb;
-  color: white;
-  border-color: #2563eb;
-}

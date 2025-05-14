@@ -6,7 +6,14 @@ import '../styles/EmployeePage.css';
 function EmployeePage() {
   const [showModal, setShowModal] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const [employees, setEmployees] = useState([]);
+
+  const defaultEmployees = [
+  { id: 1, name: 'Chinmaya Kumar Nayak', email: 'chinmaya@example.com', department: 'HR', role: 'Manager' },
+  { id: 2, name: 'Soumyak ranjan Behera', email: 'jane@example.com', department: 'Finance', role: 'Analyst' },
+  { id: 3, name: 'Anita Patra', email: 'sam@example.com', department: 'Engineering', role: 'Developer' },
+  { id: 4, name: 'Biswajit Bhadra', email: 'lisa@example.com', department: 'Marketing', role: 'Lead' },
+];
+  const [employees, setEmployees] = useState(defaultEmployees);
 
   const handleAddClick = () => {
     setSelectedEmployee(null);
@@ -19,31 +26,31 @@ function EmployeePage() {
   };
 
   const handleDelete = (id) => {
-  if (window.confirm("Are you sure you want to delete this employee?")) {
     setEmployees(prev => prev.filter(emp => emp.id !== id));
-  }
-};
+  };
 
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedEmployee(null);
   };
 
-const handleFormSubmit = (employeeData) => {
+const handleSave = (employee) => {
   if (selectedEmployee) {
     // Update existing
     setEmployees(prev =>
-      prev.map(emp =>
-        emp.email === selectedEmployee.email ? employeeData : emp
-      )
+      prev.map(emp => emp.id === selectedEmployee.id ? { ...employee, id: selectedEmployee.id } : emp)
     );
   } else {
     // Add new
-    setEmployees(prev => [...prev, employeeData]);
+    const newEmployee = {
+      ...employee,
+      id: employees.length ? Math.max(...employees.map(e => e.id)) + 1 : 1,
+    };
+    setEmployees(prev => [...prev, newEmployee]);
   }
 
-  setShowModal(false);       // Close modal
-  setSelectedEmployee(null); // Reset selection
+  setShowModal(false);
+  setSelectedEmployee(null);
 };
 
   return (
@@ -62,7 +69,7 @@ const handleFormSubmit = (employeeData) => {
       <EmployeeFormModal
         isOpen={showModal}
         onClose={handleCloseModal}
-        onSubmit={handleFormSubmit}
+        onSave={handleSave}
         editableEmployee={selectedEmployee}
       />
     </div>
