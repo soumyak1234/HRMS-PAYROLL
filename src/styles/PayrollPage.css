@@ -1,0 +1,14 @@
+.filter-badges {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  background-color: #e0f3ff;
+  border: 1px solid #b3dfff;
+  color: #0077cc;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}

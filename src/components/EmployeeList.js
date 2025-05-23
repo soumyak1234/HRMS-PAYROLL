@@ -51,7 +51,7 @@ function EmployeeList({ employees,onDelete, onEdit }) {
 };
 
   return (
-    <div className="employee-table-container">
+    <div className="table-container">
       <div className="filter-bar">
         <input
           type="text"
@@ -73,7 +73,7 @@ function EmployeeList({ employees,onDelete, onEdit }) {
         <button onClick={exportToExcel}>Export Excel</button>
       </div>
 
-      <table className="employee-table">
+      <table className="table">
         <thead>
           <tr>
             <th>Name</th>

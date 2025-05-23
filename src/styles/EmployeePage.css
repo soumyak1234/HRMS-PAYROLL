@@ -1,18 +1,16 @@
-.employee-page {
+.common-page {
   padding: 2rem;
-  background: #f9fafb;
+  background: aliceblue;
   min-height: 100vh;
 }
 
-.employee-header {
+.common-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
-.employee-header h2 {
-  font-size: 1.5rem;
+.common-header h2 {
   font-weight: 600;
   color: #1e293b;
 }

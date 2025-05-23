@@ -67,7 +67,7 @@ const exportToPDF = () => {
 };
 
   return (
-    <div className="employee-table-container">
+    <div className="table-container">
       <div className="table-header">
         <h3>Employee Directory</h3>
         <input
@@ -87,7 +87,7 @@ const exportToPDF = () => {
       </div>
 
 
-      <table className="employee-table">
+      <table className="table">
         <thead>
           <tr>
             <th>Name</th>

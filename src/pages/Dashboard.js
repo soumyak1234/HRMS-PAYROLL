@@ -84,7 +84,10 @@ function Dashboard() {
           <EmployeePieChart />
           <EmployeeRadarChart />
         </div>
-        <EmployeeTable />
+        <div className="dashboard-table">
+          <EmployeeTable />
+        </div>
+        
       </div>
     </>
   );
