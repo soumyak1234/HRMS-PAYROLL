@@ -1,3 +1,4 @@
+// src/components/EmployeeFormModal.js
 import React, { useState, useEffect } from 'react';
 import '../styles/EmployeeFormModal.css';
 
@@ -7,13 +8,24 @@ function EmployeeFormModal({ isOpen, onClose, onSave, editableEmployee }) {
     email: '',
     department: '',
     role: '',
+    phone: '',
+    doj: '',
+    status: 'Active',
   });
 
   useEffect(() => {
     if (editableEmployee) {
       setFormData(editableEmployee);
     } else {
-      setFormData({ name: '', email: '', department: '', role: '' });
+      setFormData({
+        name: '',
+        email: '',
+        department: '',
+        role: '',
+        phone: '',
+        doj: '',
+        status: 'Active',
+      });
     }
   }, [editableEmployee]);
 
@@ -29,7 +41,7 @@ function EmployeeFormModal({ isOpen, onClose, onSave, editableEmployee }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(formData);       // Pass data to parent
-    onClose();                // Close modal after submit
+    onClose();              // Close modal after submit
   };
 
   return (
@@ -65,6 +77,24 @@ function EmployeeFormModal({ isOpen, onClose, onSave, editableEmployee }) {
             placeholder="Role"
             required
           />
+          <input
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Phone"
+            required
+          />
+          <input
+            name="doj"
+            value={formData.doj}
+            onChange={handleChange}
+            placeholder="Date of Joining (YYYY-MM-DD)"
+            required
+          />
+          <select name="status" value={formData.status} onChange={handleChange} required>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
           <div className="modal-actions">
             <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
             <button type="submit" className="submit-btn">Save</button>

@@ -1,0 +1,31 @@
+.common-page {
+  padding: 2rem;
+  background: aliceblue;
+  min-height: 100vh;
+}
+
+.common-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.common-header h2 {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.add-btn {
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #1d4ed8;
+}

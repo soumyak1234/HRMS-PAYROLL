@@ -1,3 +1,4 @@
+// src/pages/EmployeePage.js
 import React, { useState } from "react";
 import EmployeeList from "../components/EmployeeList";
 import EmployeeFormModal from "../components/EmployeeFormModal";
@@ -14,29 +15,42 @@ function EmployeePage() {
       email: "chinmaya@example.com",
       department: "HR",
       role: "Manager",
+      phone: "9876543210",
+      doj: "2022-01-15",
+      status: "Active"
     },
     {
       id: 2,
-      name: "Soumyak ranjan Behera",
-      email: "jane@example.com",
+      name: "Soumyak Ranjan Behera",
+      email: "soumyak@example.com",
       department: "Finance",
       role: "Analyst",
+      phone: "9876543211",
+      doj: "2023-03-20",
+      status: "Active"
     },
     {
       id: 3,
       name: "Anita Patra",
-      email: "sam@example.com",
+      email: "anita@example.com",
       department: "Engineering",
       role: "Developer",
+      phone: "9876543212",
+      doj: "2021-06-10",
+      status: "Inactive"
     },
     {
       id: 4,
       name: "Biswajit Bhadra",
-      email: "lisa@example.com",
+      email: "biswajit@example.com",
       department: "Marketing",
       role: "Lead",
+      phone: "9876543213",
+      doj: "2020-09-01",
+      status: "Active"
     },
   ];
+
   const [employees, setEmployees] = useState(defaultEmployees);
 
   const handleAddClick = () => {

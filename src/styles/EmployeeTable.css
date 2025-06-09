@@ -59,3 +59,13 @@
 .action-icon:hover {
   color: #1d4ed8;
 }
+
+.clickable-name {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clickable-name:hover {
+  color: #0056b3;
+}
